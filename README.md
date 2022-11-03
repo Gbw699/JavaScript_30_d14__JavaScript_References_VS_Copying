@@ -1,1 +1,1 @@
-Ejercicios sobre las diferencias entre el uso de las referencias y las copias, del curso JavaScript 30 days challenge, día 14.
+Ejercicios sobre las diferencias entre el uso de referencias y  copias, del curso JavaScript 30 days challenge, día 14.

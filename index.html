@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS Reference VS Copy</title>
+  </head>
+  <body>
+    <h3>VER LA <span style="color: #8ec3b0">CONSOLA</span> :)</h3>
+    <script>
+      // start with strings, numbers and booleans
+      let str = "hola";
+      let str2 = str;
+      str = "chau";
+      console.log("%cEjemplo 1", "color:#9ED5C5");
+      console.log(str);
+      console.log(str2);
+
+      // Let's say we have an array
+      const players = ["Wes", "Sarah", "Ryan", "Poppy"];
+
+      // Let's take a copy!
+      // one way
+      const players2 = players.slice();
+      players[0] = "Pedro";
+      console.log("%cEjemplo 2", "color:#9ED5C5");
+      console.log(players);
+      console.log(players2);
+
+      // or create a new array and concat the old one in
+      const players3 = [].concat(players);
+      players[2] = "Juan";
+      console.log("%cEjemplo 3", "color:#9ED5C5");
+      console.log(players);
+      console.log(players3);
+
+      // or use the new ES6 Spread
+      const players4 = [...players];
+      players[3] = "Luis";
+      console.log("%cEjemplo 4", "color:#9ED5C5");
+      console.log(players);
+      console.log(players4);
+
+      const players5 = Array.from(players);
+      // now when we update it, the original one isn't changed
+
+      // The same thing goes for objects, let's say we have a person object
+      // with Objects
+      const person = {
+        name: "Wes Bos",
+        age: 80,
+      };
+
+      // how do we take a copy?
+      const person2 = Object.assign({}, person, { age: 120 });
+      person.age = 40;
+      console.log("%cEjemplo 5", "color:#9ED5C5");
+      console.table(person);
+      console.table(person2);
+      // We will hopefully soon see the object ...spread
+
+      // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+    </script>
+  </body>
+</html>
